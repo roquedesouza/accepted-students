@@ -2,121 +2,135 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>HOPAC Students</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOPAC - Accepted Students</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; background: #ffffff; padding: 20px; }
-    h1 { color: #2c3e50; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 10px 0; }
-    a { color: #2980b9; text-decoration: none; }
-    a:hover { color: #1abc9c; }
+    :root {
+      --bg: #f4f6f9;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --border: #e2e8f0;
+      --shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(15, 23, 42, 0.04);
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+    .page { max-width: 720px; margin: 0 auto; padding: 40px 20px 80px; }
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+    .back:hover { color: var(--primary); }
+    h1 {
+      font-size: clamp(24px, 4vw, 30px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    .meta {
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+    .list {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .student {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .student:last-child { border-bottom: none; }
+    .student-name { font-weight: 500; }
+    .linkedin {
+      flex-shrink: 0;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: #eff6ff;
+    }
+    .linkedin:hover { background: #dbeafe; }
+    .linkedin.missing {
+      color: var(--text-muted);
+      background: #f1f5f9;
+      pointer-events: none;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <h1>🎉 HOPAC Students</h1>
-  <ul>
+  <div class="page">
+    <a class="back" href="index.html">← Back to Programs</a>
+    <h1>HOPAC</h1>
+    <p class="meta">Accepted Students</p>
 
-    <li>
-      Aichi Rimoy — 
-      <a href="https://linkedin.com/in/aichi-rimoy-3098ba3b2" target="_blank">LinkedIn Profile</a>
-    </li>
+    <div class="list">
+      <div class="student"><span class="student-name">Aichi Rimoy</span><a class="linkedin" href="https://linkedin.com/in/aichi-rimoy-3098ba3b2" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Bhriah Rayka Lakhani</span><a class="linkedin" href="https://linkedin.com/in/briah-rayka-lakhani-693855221" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Billie Anointed Yesse</span><a class="linkedin" href="https://linkedin.com/in/billie-anoited-yesse-43a80b3b4" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Hannah Bomani</span><a class="linkedin" href="https://linkedin.com/in/hannah-bomani-bb3935356" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Jeremiah Fernandes</span><a class="linkedin" href="https://linkedin.com/in/jeremiah-fernandes-bb1712374" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Joan Mahamba</span><a class="linkedin" href="https://linkedin.com/in/joan-mahamba-4a8a89378" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Lara Kaduma</span><a class="linkedin" href="https://linkedin.com/in/lara-kaduma-b5169b3b3" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Lisa Masele</span><a class="linkedin" href="https://linkedin.com/in/lisa-masele-8057b03b2" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Lizpam Thadeo</span><a class="linkedin" href="https://linkedin.com/in/lizpam-thadeo-2218883b4" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Mary Tarimo</span><a class="linkedin" href="https://linkedin.com/in/mary-tarimo-0bab78281" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Melissa Nambaya</span><a class="linkedin" href="https://linkedin.com/in/melissa-nambaya-3ab125352" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Praise Cecilia Josephat</span><a class="linkedin" href="https://linkedin.com/in/praise-cecilia-josephat-260961392" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Precious Agatha Mtandu</span><a class="linkedin" href="https://linkedin.com/in/precious-agatha-mtandu-4938753b3" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Yohana Matovelo</span><a class="linkedin" href="https://linkedin.com/in/yohana-matovelo-922834303" target="_blank" rel="noopener">LinkedIn</a></div>
+      <div class="student"><span class="student-name">Joshua Zaipuna</span><span class="linkedin missing">No link</span></div>
+      <div class="student"><span class="student-name">Laura Swai</span><span class="linkedin missing">No link</span></div>
+      <div class="student"><span class="student-name">Einstein Mkakali</span><span class="linkedin missing">No link</span></div>
+      <div class="student"><span class="student-name">Hethvi Badiani</span><span class="linkedin missing">No link</span></div>
+      <div class="student"><span class="student-name">Clarissa Abyce</span><span class="linkedin missing">No link</span></div>
+      <div class="student"><span class="student-name">Axel Kyara</span><span class="linkedin missing">No link</span></div>
+    </div>
 
-    <li>
-      Bhriah Rayka Lakhani — 
-      <a href="https://linkedin.com/in/briah-rayka-lakhani-693855221" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Billie Anointed Yesse — 
-      <a href="https://linkedin.com/in/billie-anoited-yesse-43a80b3b4" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Hannah Bomani — 
-      <a href="https://linkedin.com/in/hannah-bomani-bb3935356" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Jeremiah Fernandes — 
-      <a href="https://linkedin.com/in/jeremiah-fernandes-bb1712374" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Joan Mahamba — 
-      <a href="https://linkedin.com/in/joan-mahamba-4a8a89378" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Lara Kaduma — 
-      <a href="https://linkedin.com/in/lara-kaduma-b5169b3b3" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Lisa Masele — 
-      <a href="https://linkedin.com/in/lisa-masele-8057b03b2" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Lizpam Thadeo — 
-      <a href="https://linkedin.com/in/lizpam-thadeo-2218883b4" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Mary Tarimo — 
-      <a href="https://linkedin.com/in/mary-tarimo-0bab78281" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Melissa Nambaya — 
-      <a href="https://linkedin.com/in/melissa-nambaya-3ab125352" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Praise Cecilia Josephat — 
-      <a href="https://linkedin.com/in/praise-cecilia-josephat-260961392" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Precious Agatha Mtandu — 
-      <a href="https://linkedin.com/in/precious-agatha-mtandu-4938753b3" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Yohana Matovelo — 
-      <a href="https://linkedin.com/in/yohana-matovelo-922834303" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Joshua Zaipuna — 
-      <a href="" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Laura Swai — 
-      <a href="" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Einstein Mkakali — 
-      <a href="" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Hethvi Badiani — 
-      <a href="" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Clarissa Abyce — 
-      <a href="" target="_blank">LinkedIn Profile</a>
-    </li>
-
-    <li>
-      Axel Kyara — 
-      <a href="" target="_blank">LinkedIn Profile</a>
-    </li>
-
-  </ul>
-  <p><a href="index.html">⬅ Back to Programs</a></p>
+    <footer>
+      <p>&copy; <a href="https://visualixe-foundation.vercel.app/" target="_blank" rel="noopener">Visualixe Foundation</a></p>
+    </footer>
+  </div>
 </body>
 </html>
