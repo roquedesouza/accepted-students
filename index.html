@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accepted Students</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9fbfd; padding: 20px; }
+    h1 { text-align: center; color: #2c3e50; }
+    ul { list-style: none; padding: 0; max-width: 600px; margin: 20px auto; }
+    li { margin: 10px 0; }
+    a { text-decoration: none; color: #2980b9; font-weight: bold; }
+    a:hover { color: #1abc9c; }
+    #searchBox {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      width: 60%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #results {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎓 Accepted Students Website</h1>
+
+  <!-- Search bar -->
+  <input type="text" id="searchBox" placeholder="Search for a student by name...">
+
+  <!-- Program list -->
+  <ul>
+
+    <li><a href="addiscoder2023.html">AddisCoder 2023</a></li>
+    <li><a href="addiscoder2025.html">AddisCoder 2025</a></li>
+    <li><a href="addiscoder2026.html">AddisCoder 2026</a></li>
+    <li><a href="afsglobalstem2025.html">AFS Global STEM 2025</a></li>
+    <li><a href="alaclassof2026.html">ALA Class of 2026</a></li>
+    <li><a href="cocacolascholars2026.html">CocaCola Scholars 2026</a></li>
+    <li><a href="davidscholars.html">David Scholars</a></li>
+    <li><a href="hopac.html">HOPAC</a></li>
+    <li><a href="huvtsp2025.html">HUVTSP 2025</a></li> 
+	  <li><a href="huvtsp2026.html">HUVTSP 2026</a></li>
+    <li><a href="ist.html">IST</a></li>
+    <li><a href="johnlockeinstitute.html">John Locke Institute</a></li>
+    <li><a href="launchx2025.html">LaunchX 2025</a></li>
+    <li><a href="mites2025.html">MITES 2025</a></li>
+    <li><a href="nasaspaceapps2025.html">NASA Space Apps 2025</a></li>
+    <li><a href="nsri.html">NSRI</a></li>
+    <li><a href="pioneeracademics2025.html">Pioneer Academics Research Program 2025</a></li>
+    <li><a href="pioneeracademics2025.html">Pioneer Academics Research Program 2026</a></li>
+	  <li><a href="questbridge2025.html">QuestBridge 2025</a></li>
+    <li><a href="rsi2025.html">RSI 2025</a></li>
+	  <li><a href="rsi2026.html">RSI 2026</a></li>
+    <li><a href="ssp2025.html">SSP 2025</a></li>  
+	  <li><a href="ssp2026.html">SSP 2026</a></li>
+	  <li><a href="svf2026applied.html">SVF Applied 2026</a></li>
+    <li><a href="uic.html">UIC</a></li>
+    <li><a href="uwceastafrica.html">UWC East Africa</a></li>
+    <li><a href="uwcrcn.html">UWC RCN</a></li>
+    <li><a href="yyas2025.html">YYAS 2025</a></li> 
+	  <li><a href="yyas2026.html">YYAS 2026</a></li>	
+    <li><a href="yygs2025.html">YYGS 2025</a></li>
+	  <li><a href="yygs2026.html">YYGS 2026</a></li>
+
+  </ul>
+
+  <!-- Search results -->
+  <div id="results"></div>
+
+  <script>
+    // Example student database (expand with real names + program links)
+    const students = [
+      { name: "Madhumita Sajjan", program: "AddisCoder 2026", url: "addiscoder.html" },
+      { name: "Student Example", program: "AFS Global STEM", url: "afs.html" },
+      { name: "Another Student", program: "MITES", url: "mites.html" }
+      // Add more students here
+    ];
+
+    const searchBox = document.getElementById("searchBox");
+    const resultsDiv = document.getElementById("results");
+
+    searchBox.addEventListener("input", function() {
+      const query = this.value.toLowerCase();
+      resultsDiv.innerHTML = "";
+      if (query.length > 1) {
+        const matches = students.filter(s => s.name.toLowerCase().includes(query));
+        if (matches.length > 0) {
+          resultsDiv.style.display = "block";
+          matches.forEach(s => {
+            const item = document.createElement("p");
+            item.innerHTML = `<strong>${s.name}</strong> — <a href="${s.url}">${s.program}</a>`;
+            resultsDiv.appendChild(item);
+          });
+        } else {
+          resultsDiv.style.display = "block";
+          resultsDiv.innerHTML = "<p>No matches found.</p>";
+        }
+      } else {
+        resultsDiv.style.display = "none";
+      }
+    });
+  </script>
+  
+    <footer>
+        <p><center>&copy; Visualixe Foundation</center></p>
+    </footer>
+</body>
+</html>
