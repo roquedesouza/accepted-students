@@ -6,7 +6,7 @@ Built by **Visualixe Foundation**.
 
 ## Live Site
 
-Open `index.html` or deploy the repo (GitHub Pages works great).
+https://accepted-students.vercel.app
 
 ## What’s inside
 
@@ -31,6 +31,7 @@ Open `index.html` or deploy the repo (GitHub Pages works great).
 - SVF Applied 2026
 - UIC
 - UWC East Africa
+- UWC East Africa Class of 2027
 - UWC RCN
 - YYAS (2025, 2026)
 - YYGS (2025, 2026)
