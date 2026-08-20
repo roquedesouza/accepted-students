@@ -14,7 +14,7 @@
       --text: #0f172a;
       --text-muted: #64748b;
       --primary: #2563eb;
-      --primary-hover: #1d4ed8;
+      --primary-soft: #eff6ff;
       --border: #e2e8f0;
       --shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(15, 23, 42, 0.04);
       --radius: 14px;
@@ -33,23 +33,23 @@
     }
 
     .page {
-      max-width: 920px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 40px 20px 48px;
+      padding: 40px 20px 56px;
       flex: 1;
       width: 100%;
     }
 
     header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #eff6ff;
+      background: var(--primary-soft);
       color: var(--primary);
       font-size: 13px;
       font-weight: 600;
@@ -75,7 +75,7 @@
     .search-wrap {
       position: relative;
       max-width: 520px;
-      margin: 32px auto 0;
+      margin: 28px auto 0;
     }
 
     #searchBox {
@@ -116,6 +116,7 @@
       overflow: hidden;
       max-height: 320px;
       overflow-y: auto;
+      text-align: left;
     }
 
     #results p {
@@ -134,51 +135,123 @@
 
     #results a:hover { text-decoration: underline; }
 
-    .section-label {
-      font-size: 12px;
-      font-weight: 600;
+    .category {
+      margin-top: 40px;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .category-title {
+      font-size: 13px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.07em;
       color: var(--text-muted);
-      margin: 40px 0 16px;
+    }
+
+    .category-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
     }
 
     .programs {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
     }
 
     .program-card {
-      display: flex;
-      align-items: center;
-      gap: 12px;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 14px 16px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-      font-size: 14px;
+      padding: 16px 18px;
       box-shadow: var(--shadow);
-      transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
     }
 
     .program-card:hover {
       border-color: #bfdbfe;
-      transform: translateY(-1px);
       box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
-      color: var(--primary);
+      transform: translateY(-1px);
     }
 
-    .program-card .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--primary);
+    .program-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .program-name {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .ext-link {
       flex-shrink: 0;
-      opacity: 0.7;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .ext-link:hover {
+      background: #dbeafe;
+    }
+
+    .years {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .year-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--primary);
+      background: var(--primary-soft);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .year-chip:hover {
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .nested {
+      margin-top: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .nested-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-top: 4px;
     }
 
     footer {
@@ -228,35 +301,273 @@
       <div id="results"></div>
     </header>
 
-    <p class="section-label">All Programs</p>
+    <!-- SUMMER PROGRAMS -->
+    <section class="category">
+      <div class="category-header">
+        <span class="category-title">Summer Programs</span>
+        <span class="category-line"></span>
+      </div>
+      <div class="programs">
 
-    <div class="programs">
-      <a class="program-card" href="addiscoder2023.html"><span class="dot"></span>AddisCoder 2023</a>
-      <a class="program-card" href="addiscoder2026.html"><span class="dot"></span>AddisCoder 2026</a>
-      <a class="program-card" href="afsglobalstem2025.html"><span class="dot"></span>AFS Global STEM 2025</a>
-      <a class="program-card" href="alaclassof2026.html"><span class="dot"></span>ALA Class of 2026</a>
-      <a class="program-card" href="hopac.html"><span class="dot"></span>HOPAC</a>
-      <a class="program-card" href="huvtsp2025.html"><span class="dot"></span>HUVTSP 2025</a>
-      <a class="program-card" href="huvtsp2026.html"><span class="dot"></span>HUVTSP 2026</a>
-      <a class="program-card" href="ist.html"><span class="dot"></span>IST</a>
-      <a class="program-card" href="johnlockeinstitute.html"><span class="dot"></span>John Locke Institute</a>
-      <a class="program-card" href="mites2025.html"><span class="dot"></span>MITES 2025</a>
-      <a class="program-card" href="nasaspaceapps2025.html"><span class="dot"></span>NASA Space Apps 2025</a>
-      <a class="program-card" href="nsri.html"><span class="dot"></span>NSRI</a>
-      <a class="program-card" href="questbridge2025.html"><span class="dot"></span>QuestBridge 2025</a>
-      <a class="program-card" href="rsi2025.html"><span class="dot"></span>RSI 2025</a>
-      <a class="program-card" href="ssp2025.html"><span class="dot"></span>SSP 2025</a>
-      <a class="program-card" href="ssp2026.html"><span class="dot"></span>SSP 2026</a>
-      <a class="program-card" href="svf2026applied.html"><span class="dot"></span>SVF Applied 2026</a>
-      <a class="program-card" href="uic.html"><span class="dot"></span>UIC</a>
-      <a class="program-card" href="uwceastafrica.html"><span class="dot"></span>UWC East Africa</a>
-      <a class="program-card" href="uwceastafrica2027.html"><span class="dot"></span>UWC East Africa Class of 2027</a>
-      <a class="program-card" href="uwcrcn.html"><span class="dot"></span>UWC RCN</a>
-      <a class="program-card" href="yyas2025.html"><span class="dot"></span>YYAS 2025</a>
-      <a class="program-card" href="yyas2026.html"><span class="dot"></span>YYAS 2026</a>
-      <a class="program-card" href="yygs2025.html"><span class="dot"></span>YYGS 2025</a>
-      <a class="program-card" href="yygs2026.html"><span class="dot"></span>YYGS 2026</a>
-    </div>
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">AddisCoder</span>
+            <a class="ext-link" href="https://www.addiscoder.com/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="addiscoder2023.html">2023</a>
+            <a class="year-chip" href="addiscoder2026.html">2026</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">NASA Space Apps</span>
+            <a class="ext-link" href="https://www.spaceappschallenge.org/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="nasaspaceapps2025.html">2025</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">AFS Global STEM</span>
+            <a class="ext-link" href="https://afs.org/global-stem/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="afsglobalstem2025.html">2025</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">HUVTSP</span>
+            <a class="ext-link" href="https://www.vtsp.com/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="huvtsp2025.html">2025</a>
+            <a class="year-chip" href="huvtsp2026.html">2026</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">John Locke Institute</span>
+            <a class="ext-link" href="https://www.johnlockeinstitute.com/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="johnlockeinstitute.html">View students</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">QuestBridge</span>
+            <a class="ext-link" href="https://www.questbridge.org/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="questbridge2025.html">2025</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">SSP</span>
+            <a class="ext-link" href="https://ssp.org/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="ssp2025.html">2025</a>
+            <a class="year-chip" href="ssp2026.html">2026</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">YYAS</span>
+            <a class="ext-link" href="https://africanscholars.yale.edu/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="yyas2025.html">2025</a>
+            <a class="year-chip" href="yyas2026.html">2026</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">YYGS</span>
+            <a class="ext-link" href="https://globalscholars.yale.edu/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="yygs2025.html">2025</a>
+            <a class="year-chip" href="yygs2026.html">2026</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">MITES Summer</span>
+            <a class="ext-link" href="https://mites.mit.edu/discover-mites/mites-summer/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="mites2025.html">2025</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">NSRI</span>
+            <a class="ext-link" href="https://nsri.world/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="nsri.html">View students</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">RSI</span>
+            <a class="ext-link" href="https://www.cee.org/programs/research-science-institute" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="rsi2025.html">2025</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HIGH SCHOOL -->
+    <section class="category">
+      <div class="category-header">
+        <span class="category-title">High School</span>
+        <span class="category-line"></span>
+      </div>
+      <div class="programs">
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">HOPAC</span>
+            <a class="ext-link" href="https://www.hopac.sc.tz/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="hopac.html">View students</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">UWC East Africa</span>
+            <a class="ext-link" href="https://www.uwcea.org/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="nested">
+            <span class="nested-label">Cohorts</span>
+            <div class="years">
+              <a class="year-chip" href="uwceastafrica2027.html">Class of 2027</a>
+              <a class="year-chip" href="uwceastafrica.html">Others</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">UWC RCN</span>
+            <a class="ext-link" href="https://uwc.org/school/uwc-red-cross-nordic/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="uwcrcn.html">View students</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">ALA</span>
+            <a class="ext-link" href="https://www.africanleadershipacademy.org/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="nested">
+            <span class="nested-label">Cohorts</span>
+            <div class="years">
+              <a class="year-chip" href="alaclassof2026.html">Class of 2026</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">IST</span>
+            <a class="ext-link" href="https://www.istafrica.co.tz/" target="_blank" rel="noopener" title="Official website">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="ist.html">View students</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- UNIVERSITY ALUM -->
+    <section class="category">
+      <div class="category-header">
+        <span class="category-title">University Alum</span>
+        <span class="category-line"></span>
+      </div>
+      <div class="programs">
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">UIC</span>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="uic.html">View students</a>
+          </div>
+        </div>
+
+        <div class="program-card">
+          <div class="program-top">
+            <span class="program-name">SVF Applied 2026</span>
+          </div>
+          <div class="years">
+            <a class="year-chip" href="svf2026applied.html">View students</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </div>
 
   <footer>
